@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Solicitar Servicio</h1>
+    <mat-form-field>
+        <input matInput [(ngModel)]="user.name" type="text" placeholder="Nombre Completo">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="user.cedula" type="id" placeholder="Cedula">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="user.cant" type="number" placeholder="Cantidad">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [(ngModel)]="user.talla" placeholder="Talla">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Modelo" [(ngModel)]="seleccion">
+            <mat-option *ngFor="let model of modelo" [value]="model">{{model}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="operacion()" color="primary">Guaradar</button>
+    <button mat-raised-button (click)="delete(user.id)" color="warn">Eliminar</button>
+</div>

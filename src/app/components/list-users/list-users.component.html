@@ -1,0 +1,52 @@
+<mat-table [dataSource]="users">
+    <!-- User name Definition -->
+    <ng-container cdkColumnDef="id">
+        <mat-header-cell *cdkHeaderCellDef> Codigo </mat-header-cell>
+        <mat-cell *cdkCellDef="let  users"> {{ users.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Age Definition -->
+    <ng-container cdkColumnDef="name">
+        <mat-header-cell *cdkHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{ users.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Title Definition -->
+    <ng-container cdkColumnDef="cedula">
+        <mat-header-cell *cdkHeaderCellDef> Cedula </mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{users.cedula}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="cantidad">
+        <mat-header-cell *cdkHeaderCellDef> Cantidad</mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{users.cant}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="modelo">
+        <mat-header-cell *cdkHeaderCellDef> Modelo </mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{users.modelo}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="talla">
+        <mat-header-cell *cdkHeaderCellDef> Talla</mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{users.talla}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="total">
+        <mat-header-cell *cdkHeaderCellDef> Total</mat-header-cell>
+        <mat-cell *cdkCellDef="let users"> {{users.total}}</mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+        <mat-header-cell *cdkHeaderCellDef> Edit</mat-header-cell>
+        <mat-cell *cdkCellDef="let users">
+            <button mat-button color="primary" [routerLink]="['/edit-user', users.id]"> edit</button>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row *cdkHeaderRowDef="['id', 'name', 'cedula', 'cantidad', 'modelo', 'talla', 'total', 'actions']">
+    </mat-header-row>
+    <mat-row *cdkRowDef="let  users; columns: ['id', 'name', 'cedula', 'cantidad', 'modelo', 'talla', 'total', 'actions' ]">
+    </mat-row>
+</mat-table>

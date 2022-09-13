@@ -1,0 +1,19 @@
+<div class="container">
+
+    <mat-form-field>
+        <input matNativeControl type="text" name="modelo" [(ngModel)]="art.modelo" placeholder="Modelo">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matNativeControl type="number" name="precio" [(ngModel)]="art.precio" placeholder="Precio">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matNativeControl type="number" name="talla" [(ngModel)]="art.talla" placeholder="Talla">
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" (click)="alta()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="delete(art.codigo)">Eliminar</button>
+
+</div>

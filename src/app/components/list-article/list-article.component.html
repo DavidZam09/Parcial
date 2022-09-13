@@ -1,0 +1,80 @@
+<div class="container">
+    <mat-table [dataSource]="articulos">
+        <!-- User name Definition -->
+        <ng-container cdkColumnDef="codigo">
+            <mat-header-cell *cdkHeaderCellDef> Codigo </mat-header-cell>
+            <mat-cell *cdkCellDef="let articulos"> {{articulos.codigo}} </mat-cell>
+        </ng-container>
+
+        <!-- Age Definition -->
+        <ng-container cdkColumnDef="modelo">
+            <mat-header-cell *cdkHeaderCellDef> Modelo </mat-header-cell>
+            <mat-cell *cdkCellDef="let articulos"> {{articulos.modelo}} </mat-cell>
+        </ng-container>
+
+        <!-- Title Definition -->
+        <ng-container cdkColumnDef="precio">
+            <mat-header-cell *cdkHeaderCellDef> precio </mat-header-cell>
+            <mat-cell *cdkCellDef="let articulos"> {{articulos.precio}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="talla">
+            <mat-header-cell *cdkHeaderCellDef> Talla </mat-header-cell>
+            <mat-cell *cdkCellDef="let articulos">Disponible: {{articulos.talla}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="actions">
+            <mat-header-cell *cdkHeaderCellDef> Edit</mat-header-cell>
+            <mat-cell *cdkCellDef="let articulos">
+                <button mat-button color="primary" [routerLink]="['/edit-article', articulos.codigo]"> edit</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *cdkHeaderRowDef="['codigo', 'modelo', 'precio', 'talla', 'actions' ]"></mat-header-row>
+        <mat-row *cdkRowDef="let articulos; columns: ['codigo', 'modelo', 'precio', 'talla','actions']"></mat-row>
+    </mat-table>
+    <div class="container">
+        <h1>Solicitar Servicio</h1>
+        <mat-form-field>
+            <input matInput [(ngModel)]="user.name" type="text" placeholder="Nombre Completo">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="user.cedula" type="id" placeholder="Cedula">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="user.cant" type="number" placeholder="Cantidad">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [(ngModel)]="user.talla" placeholder="Talla">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Modelo" [(ngModel)]="seleccion">
+                <mat-option *ngFor="let model of modelo" [value]="model">{{model}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button (click)="operacion()" color="primary">Guaradar</button>
+    </div>
+    <div class="info">
+        <h3>Atencion</h3>
+        <h4>El precio varia de acuerdo al modelo y la talla.</h4>
+    </div>
+</div>
+
+<!--   <table mat-table class="mat-elevation-z8">
+        <tr>
+            <td>Codigo</td>
+            <td>modelo</td>
+            <td>Precio</td>
+            <td>talla</td>
+        </tr>
+        <tr *ngFor="let art of articulos">
+            <td>{{art.codigo}}</td>
+            <td>{{art.modelo}}</td>
+            <td>{{art.precio}}</td>
+            <td>{{art.talla}}</td>
+        </tr>
+    </table> -->
