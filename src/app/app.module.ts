@@ -18,7 +18,7 @@ import { ListUsersComponent } from './components/list-users/list-users.component
 import { MatSelectModule } from '@angular/material/select';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ApiComponent } from './components/api/api.component'
+import { ApiComponent } from './components/api/api.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ApiComponent } from './components/api/api.component'
     ListArticleComponent,
     ListUsersComponent,
     EditUserComponent,
-    ApiComponent
+    ApiComponent,
+    
   ],
   imports: [
     MatDialogModule,
