@@ -5,6 +5,7 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
 import { ListArticleComponent } from './components/list-article/list-article.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ApiComponent } from './components/api/api.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'edit-article/:id', component: EditArticleComponent },
   { path: 'list-users', component: ListUsersComponent },
   { path: 'edit-user/:id', component: EditUserComponent },
+  { path: 'api', component: ApiComponent }
 ];
 
 

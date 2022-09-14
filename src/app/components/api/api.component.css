@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container>* {
+    width: 100%;
+}
+
+button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    background-color: blue;
+}
+
+.caracters {
+    height: 100px;
+    width: 600px;
+    text-align: center;
+    
+}
+
+img {
+    background-color: aliceblue;
+    border-radius: 5px solid black;
+}
+
+p {
+    border: 2px black solid;
+}

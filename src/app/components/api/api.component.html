@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="name" placeholder="Pokemon">
+  </mat-form-field>
+
+  <button mat-button (click)="search()">Buscar</button>
+
+  <div class="caracters">
+    <img src="{{pokemon.image}}" *ngIf="name" alt="Imagen Pokemon">
+
+    <h3>Nombre</h3>
+    <p>{{pokemon.name | titlecase}}</p>
+    <h3>Habilidades</h3>
+    <p>{{pokemon.ability | titlecase}}</p>
+    <h3>Movimientos</h3>
+    <p>{{pokemon.moves | titlecase}}</p>
+    <h3>Experiencia Base</h3>
+    <p>{{pokemon.experience}}</p>
+  </div>
+
+</div>

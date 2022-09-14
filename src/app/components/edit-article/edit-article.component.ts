@@ -17,7 +17,7 @@ export class EditArticleComponent implements OnInit {
     talla: 0,
 
   };
-  
+
   constructor(private articleDb: DbService, private router: ActivatedRoute, private redirect: Router) { }
 
   ngOnInit(): void {
@@ -43,6 +43,7 @@ export class EditArticleComponent implements OnInit {
     this.articleDb.baja(id).subscribe((data: any) => {
       if (data) {
         alert('Datos Eliminados')
+        this.redirect.navigate(['/list-article']);
       }
     })
   }

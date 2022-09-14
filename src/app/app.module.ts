@@ -17,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { MatSelectModule } from '@angular/material/select';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { ApiComponent } from './components/api/api.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     EditArticleComponent,
     ListArticleComponent,
     ListUsersComponent,
-    EditUserComponent
+    EditUserComponent,
+    ApiComponent
   ],
   imports: [
     MatDialogModule,
